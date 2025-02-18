@@ -13,20 +13,20 @@ main_win.setFixedSize(800, 600)
 
 main_win.setWindowTitle('Easy Editor')
 picture_list_widget = QListWidget()
-picture = QLabel('картинка')
-left_button = QPushButton('Лево')
-right_button = QPushButton('Право')
-mirror_button = QPushButton('Зеркало')
-sharpness_button = QPushButton('Резкость')
-detail_button = QPushButton('Детализация')
-contour_button = QPushButton('Контур')
-emboss_button = QPushButton('Тисненое изображение')
-edge_enhance_button = QPushButton('Четкость границ')
-save_picture_button = QPushButton('Сохранить')
+picture = QLabel('')
+left_button = QPushButton('Left')
+right_button = QPushButton('Right')
+mirror_button = QPushButton('Mirror')
+sharpness_button = QPushButton('Sharpness')
+detail_button = QPushButton('Detail')
+contour_button = QPushButton('Contour')
+emboss_button = QPushButton('Emboss')
+edge_enhance_button = QPushButton('Edge enhance')
+save_picture_button = QPushButton('Save')
 save_picture_button.setStyleSheet('QPushButton {background-color: green; color: white;}')
-black_and_white_button = QPushButton('Ч/Б')
-blur_button = QPushButton('Размытие')
-folder_button = QPushButton('Папка')
+black_and_white_button = QPushButton('B/W')
+blur_button = QPushButton('Blur')
+folder_button = QPushButton('Folder')
 
 layout_main = QHBoxLayout()
 layout3 = QHBoxLayout()
@@ -86,72 +86,135 @@ class Image_processor():
 
     def greyscale(self):
         if self.image is None:
-            return
-        self.image = self.image.convert('L')
-        self.reload_image()
-        self.show_image()
+            error_popup = QMessageBox()
+            error_popup.setText('Select a picture to apply the effect to it')
+            error_popup.setWindowTitle('Error')
+            error_popup.exec()
+        else:
+            self.image = self.image.convert('L')
+            self.reload_image()
+            self.show_image()
 
 
     def mirror(self):
-        self.image = self.image.transpose(Image.FLIP_LEFT_RIGHT)
-        self.reload_image()
-        self.show_image()
+        if self.image is None:
+            error_popup = QMessageBox()
+            error_popup.setText('Select a picture to apply the effect to it')
+            error_popup.setWindowTitle('Error')
+            error_popup.exec()
+        else:
+            self.image = self.image.transpose(Image.FLIP_LEFT_RIGHT)
+            self.reload_image()
+            self.show_image()
 
 
     def left(self):
-        self.image = self.image.transpose(Image.ROTATE_90)
-        self.reload_image()
-        self.show_image()
+        if self.image is None:
+            error_popup = QMessageBox()
+            error_popup.setText('Select a picture to apply the effect to it')
+            error_popup.setWindowTitle('Error')
+            error_popup.exec()
+        else:
+            self.image = self.image.transpose(Image.ROTATE_90)
+            self.reload_image()
+            self.show_image()
 
 
     def right(self):
-        self.image = self.image.transpose(Image.ROTATE_270)
-        self.reload_image()
-        self.show_image()
+        if self.image is None:
+            error_popup = QMessageBox()
+            error_popup.setText('Select a picture to apply the effect to it')
+            error_popup.setWindowTitle('Error')
+            error_popup.exec()
+        else:
+            self.image = self.image.transpose(Image.ROTATE_270)
+            self.reload_image()
+            self.show_image()
 
 
     def sharpness(self):
-        self.image = self.image.filter(ImageFilter.SHARPEN)
-        self.reload_image()
-        self.show_image()
+        if self.image is None:
+            error_popup = QMessageBox()
+            error_popup.setText('Select a picture to apply the effect to it')
+            error_popup.setWindowTitle('Error')
+            error_popup.exec()
+        else:
+            self.image = self.image.filter(ImageFilter.SHARPEN)
+            self.reload_image()
+            self.show_image()
 
 
     def blur(self):
-        self.image = self.image.filter(ImageFilter.BLUR)
-        self.reload_image()
-        self.show_image()
+        if self.image is None:
+            error_popup = QMessageBox()
+            error_popup.setText('Select a picture to apply the effect to it')
+            error_popup.setWindowTitle('Error')
+            error_popup.exec()
+        else:
+            self.image = self.image.filter(ImageFilter.BLUR)
+            self.reload_image()
+            self.show_image()
 
 
     def detail(self):
-        self.image = self.image.filter(ImageFilter.DETAIL)
-        self.reload_image()
-        self.show_image()
+        if self.image is None:
+            error_popup = QMessageBox()
+            error_popup.setText('Select a picture to apply the effect to it')
+            error_popup.setWindowTitle('Error')
+            error_popup.exec()
+        else:
+            self.image = self.image.filter(ImageFilter.DETAIL)
+            self.reload_image()
+            self.show_image()
 
 
     def contour(self):
-        self.image = self.image.filter(ImageFilter.CONTOUR)
-        self.reload_image()
-        self.show_image()
+        if self.image is None:
+            error_popup = QMessageBox()
+            error_popup.setText('Select a picture to apply the effect to it')
+            error_popup.setWindowTitle('Error')
+            error_popup.exec()
+        else:
+            self.image = self.image.filter(ImageFilter.CONTOUR)
+            self.reload_image()
+            self.show_image()
 
 
     def emboss(self):
-        self.image = self.image.filter(ImageFilter.EMBOSS)
-        self.reload_image()
-        self.show_image()
+        if self.image is None:
+            error_popup = QMessageBox()
+            error_popup.setText('Select a picture to apply the effect to it')
+            error_popup.setWindowTitle('Error')
+            error_popup.exec()
+        else:
+            self.image = self.image.filter(ImageFilter.EMBOSS)
+            self.reload_image()
+            self.show_image()
 
 
     def edge_enhance(self):
-        self.image = self.image.filter(ImageFilter.EDGE_ENHANCE)
-        self.reload_image()
-        self.show_image()
+        if self.image is None:
+            error_popup = QMessageBox()
+            error_popup.setText('Select a picture to apply the effect to it')
+            error_popup.setWindowTitle('Error')
+            error_popup.exec()
+        else:
+            self.image = self.image.filter(ImageFilter.EDGE_ENHANCE)
+            self.reload_image()
+            self.show_image()
 
 
     def save_picture(self):
-
-        path, _ =  QFileDialog.getSaveFileName(
-                main_win, "SaveFileName", "",
-                "Image Files (*.png *.jpg *.jpeg *.bmp)",)
-        self.image.save(path)
+        if self.image is None:
+            error_popup = QMessageBox()
+            error_popup.setText('Select a picture to save it')
+            error_popup.setWindowTitle('Error')
+            error_popup.exec()
+        else:
+            path, _ =  QFileDialog.getSaveFileName(
+                    main_win, "SaveFileName", "",
+                    "Image Files (*.png *.jpg *.jpeg *.bmp)",)
+            self.image.save(path)
 
 
 image_processor = Image_processor()

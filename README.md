@@ -34,7 +34,7 @@ The result can be saved as a graphic file.
 ![emboss image](https://github.com/mashkovamilana/Easy-Editor/blob/main/images/image-emboss.png)
 * Contour image
 ![contour image](https://github.com/mashkovamilana/Easy-Editor/blob/main/images/image-contour.png)
-* 
+
 
 ### Executing program
 

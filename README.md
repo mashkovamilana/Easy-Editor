@@ -26,6 +26,14 @@ The result can be saved as a graphic file.
 
 * Original image
 ![original image](https://github.com/mashkovamilana/Easy-Editor/blob/main/images/image-original.png)
+* Grayscale filter applied
+![grayscale filter](https://github.com/mashkovamilana/Easy-Editor/blob/main/images/image-blackandwhite.png)
+* Mirror image
+![mirror image](https://github.com/mashkovamilana/Easy-Editor/blob/main/images/image-mirror.png)
+* Emboss image
+![emboss image](https://github.com/mashkovamilana/Easy-Editor/blob/main/images/image-emboss.png)
+* Contour image
+![contour image](https://github.com/mashkovamilana/Easy-Editor/blob/main/images/image-contour.png)
 * 
 
 ### Executing program

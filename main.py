@@ -210,11 +210,18 @@ class Image_processor():
             error_popup.setText('Select a picture to save it')
             error_popup.setWindowTitle('Error')
             error_popup.exec()
-        else:
-            path, _ =  QFileDialog.getSaveFileName(
-                    main_win, "SaveFileName", "",
-                    "Image Files (*.png *.jpg *.jpeg *.bmp)",)
-            self.image.save(path)
+            return
+        path, _ =  QFileDialog.getSaveFileName(
+                main_win, "SaveFileName", "",
+                "Image Files (*.png *.jpg *.jpeg *.bmp)",)
+        if path == "":
+            error_popup = QMessageBox()
+            error_popup.setText('file was not selected')
+            error_popup.setWindowTitle('Error')
+            error_popup.exec()
+            return
+        self.image.save(path)
+
 
 
 image_processor = Image_processor()
@@ -236,8 +243,14 @@ def filter(files, extensions):
 
 def show_filenames_list():
     open_workdir()
+    if workdir == "":
+        error_popup = QMessageBox()
+        error_popup.setText('folder not selected')
+        error_popup.setWindowTitle('Error')
+        error_popup.exec()
+        return
     files = os.listdir(workdir)
-    extensions = ['.jpg', '.jpeg', '.png', '.gif']
+    extensions = ['.jpg', '.jpeg', '.png', '.gif', '.bmp']
     files = filter(files, extensions)
     picture_list_widget.clear()
     picture_list_widget.addItems(files)

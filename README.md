@@ -22,9 +22,11 @@ The result can be saved as a graphic file.
 * PyQt
 * Pillow
 
-### Installing
+### Examples
 
-*
+* Original image
+![original image](https://github.com/mashkovamilana/Easy-Editor/blob/main/images/image-original.png)
+* 
 
 ### Executing program
 
